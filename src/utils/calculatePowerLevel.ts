@@ -1,32 +1,24 @@
-interface Hero {
-  intelligence: number
-  strength: number
-  speed: number
-  durability: number
-  power: number
-  combat: number
-}
+type Hero = {
+  intelligence: number;
+  strength: number;
+  speed: number;
+  durability: number;
+  power: number;
+  combat: number;
+};
 
 export function calculatePowerLevel(hero: Hero): number {
-  if (hero === null || undefined) {
-    return 0;
-  }
-
-  const intelligence = hero?.intelligence * 50;
-  const strength = hero?.strength * 30;
-  const speed = hero?.speed * 30;
-  const durability = hero?.durability * 20;
-  const power = hero?.power * 100;
-  const combat = hero?.combat * 10;
+  const intelligence = hero.intelligence * 50 ?? 0;
+  const strength = hero.strength * 30 ?? 0;
+  const speed = hero.speed * 30 ?? 0;
+  const durability = hero.durability * 20 ?? 0;
+  const power = hero.power * 100 ?? 0;
+  const combat = hero.combat * 10 ?? 0;
 
   const powerLevel =
     intelligence + strength + speed + durability + power + combat;
 
-  if (isNaN(powerLevel) || powerLevel === null) {
-    return 0;
-  } else {
-    return powerLevel;
-  }
+  return powerLevel;
 }
 
 export function bandingUserLawan(heroUser: number, heroLawan: number) {

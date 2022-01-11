@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+import TitleText from "../components/TitleText";
 import { GitHubIcon } from "../assets/icons";
 
 const About = () => {
@@ -11,14 +13,12 @@ const About = () => {
           project works using the{" "}
           <a href="https://www.superheroapi.com/">Superhero-API</a>
         </p>
-        <Button
-          type="link"
-          isExternal
+        <a
           className="btn btn-secondary btn-sm px-3 py-2"
           href="https://github.com/halosatrio/tanding-hero"
         >
           <GitHubIcon width={"18px"} /> <span className="ml-2">Visit Repo</span>
-        </Button>
+        </a>
       </section>
       <div className="how-it-works">
         <h3>How does this app work?</h3>
@@ -89,9 +89,9 @@ const About = () => {
           </li>
         </ul>
       </div>
-      <Footer />
+      <Footer isTanding={false} />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
