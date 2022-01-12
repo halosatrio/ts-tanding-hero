@@ -107,8 +107,8 @@ const Versus = ({
           close
         </button>
       </Modal>
-      <div className="row justify-content-center my-4 align-items-center">
-        <div className="col-5 col-lg-4">
+      <div className="flex flex-row justify-center my-6 items-center">
+        <div className="basis-5/12 lg:basis-4/12 px-4">
           <TabelHeroUser
             heroUser1={heroUser1}
             heroUser2={heroUser2}
@@ -124,10 +124,10 @@ const Versus = ({
             powerLevelUser={powerLevelUser}
           />
         </div>
-        <div className="col-2 sword">
+        <div className="basis-2/12 sword">
           <img src={swords} alt="batman" />
         </div>
-        <div className="col-5 col-lg-4">
+        <div className="basis-5/12 lg:basis-4/12 px-4">
           <HeroLawan
             heroLawan={heroLawan}
             showHeroLawan={showHeroLawan}
@@ -137,7 +137,7 @@ const Versus = ({
       </div>
       <div className="text-center mt-2 mb-4">
         <button
-          className="btn btn-danger btn-lg"
+          className="py-2 px-12 bg-red-600 text-white border border-red-500 leading-8 inline-block text-xl text-center align-middle rounded-md hover:bg-red-700 duration-100"
           style={{ paddingLeft: 50, paddingRight: 50 }}
           onClick={handleRematch}
         >

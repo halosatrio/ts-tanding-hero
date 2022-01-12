@@ -5,7 +5,15 @@ module.exports = {
       sans: ["Raleway", "sans-serif"],
       serif: ["Lora", "serif"],
     },
-    extend: {},
+    extend: {
+      padding: {
+        "65pct": "65%",
+        "35pct": "35%",
+      },
+      maxWidth: {
+        "80pct": "80%",
+      },
+    },
   },
   plugins: [],
 };

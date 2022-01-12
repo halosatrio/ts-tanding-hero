@@ -25,7 +25,7 @@ const HeroLawan = ({
       <h5 className="text-center mb-2">Opponent Character</h5>
       {heroLawan && showHeroLawan ? (
         <figure>
-          <img src={heroLawan.image} alt={heroLawan.name} />
+          <img className="w-full" src={heroLawan.image} alt={heroLawan.name} />
           <h4>{heroLawan.name}</h4>
           <button className="btn btn-secondary mt-3" onClick={handleShowStats}>
             show stats
@@ -45,8 +45,12 @@ const HeroLawan = ({
           ) : null}
         </figure>
       ) : (
-        <div className="gray-man">
-          <img src={man} alt="man" />
+        <div className="bg-gray-500 max-w-full rounded-2xl">
+          <img
+            className="mx-auto max-w-80pct py-35pct px-0"
+            src={man}
+            alt="man"
+          />
         </div>
       )}
     </div>

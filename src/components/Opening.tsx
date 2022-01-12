@@ -10,7 +10,7 @@ type OpeningProps = {
 const Opening = ({ className, handleStart }: OpeningProps) => {
   return (
     <div className={`my-6 font-sans ${className}`}>
-      <div className="flex flex-row px-6 lg:my-8 items-center justify-around">
+      <div className="flex flex-row px-6 my-8 items-center justify-around">
         <div className="basis-5/12 lg:basis-4/12 px-4">
           <img className="w-full" src={ironman} alt="batman" />
         </div>
