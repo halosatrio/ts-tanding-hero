@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Tanding />} />
-        <Route path="users/*" element={<About />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );

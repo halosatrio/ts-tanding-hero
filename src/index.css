@@ -4,17 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Raleway&display=swap");
 
-/* TITLE TEXT */
-.title-text {
-  font-family: "Lora";
-  font-weight: 600;
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  color: crimson;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .about-page {
   font-family: "Raleway";
 }
@@ -48,6 +37,40 @@
 }
 .about-page.how-it-works blockquote p {
   display: inline;
+}
+
+.opening {
+  font-family: sans-serif;
+}
+.opening img {
+  width: 100%;
+}
+
+/* REACT-MODAL */
+.ReactModal__Content {
+  padding: 40px 80px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+}
+.ReactModal__Content h2 {
+  font-size: 3.5rem;
+  font-family: "Lora";
+  font-weight: 700;
+  color: crimson;
+}
+
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* body {
