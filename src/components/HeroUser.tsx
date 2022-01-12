@@ -25,12 +25,15 @@ const HeroUser = ({
         <figure>
           <img src={selectedHero.image} alt={selectedHero.name} />
           <h4>{selectedHero.name}</h4>
-          <button className="btn btn-secondary mt-3" onClick={handleShowStats}>
+          <button
+            className="py-2 px-4 bg-gray-500 text-white leading-6 text-center rounded hover:bg-gray-600 mt-4"
+            onClick={handleShowStats}
+          >
             show stats
           </button>
           {showStats ? (
-            <div className="stats-user text-left mt-2">
-              <ul>
+            <div className="border border-gray-500 rounded-lg py-3 px-0 text-left mt-2">
+              <ul className="list-disc pl-8">
                 <li>Total Power Level: {powerLevelUser}</li>
                 <li>Intelligence: {selectedHero.intelligence}</li>
                 <li>Strength: {selectedHero.strength}</li>

@@ -27,12 +27,15 @@ const HeroLawan = ({
         <figure>
           <img className="w-full" src={heroLawan.image} alt={heroLawan.name} />
           <h4>{heroLawan.name}</h4>
-          <button className="btn btn-secondary mt-3" onClick={handleShowStats}>
+          <button
+            className="py-2 px-4 bg-gray-500 text-white leading-6 text-center rounded hover:bg-gray-600 mt-4"
+            onClick={handleShowStats}
+          >
             show stats
           </button>
           {showStats ? (
-            <div className="stats-lawan text-left mt-2">
-              <ul>
+            <div className="border border-gray-500 rounded-lg py-3 px-0 text-left mt-2">
+              <ul className="list-disc pl-8">
                 <li>Total Power Level: {powerLevelLawan}</li>
                 <li>Intelligence: {heroLawan.intelligence}</li>
                 <li>Strength: {heroLawan.strength}</li>

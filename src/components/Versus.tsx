@@ -91,8 +91,8 @@ const Versus = ({
     handleHeroRematch(heroLawan, heroUser1, heroUser2, heroUser3, heroUser4);
   };
 
-  const showTableHeroUser = showTable ? "d-block" : "d-none";
-  const showHeroUser = showTable ? "d-none" : "d-block";
+  const showTableHeroUser = showTable ? "block" : "hidden";
+  const showHeroUser = showTable ? "hidden" : "block";
 
   return (
     <div className={`versus ${className}`}>
@@ -103,7 +103,10 @@ const Versus = ({
         className="ReactModal__Content"
       >
         <h2 className="mb-3">{hasilTanding}</h2>
-        <button className="btn btn-secondary btn-sm" onClick={handleCloseModal}>
+        <button
+          className="py-1 px-2 bg-gray-500 text-white leading-6 text-center rounded hover:bg-gray-600"
+          onClick={handleCloseModal}
+        >
           close
         </button>
       </Modal>

@@ -16,7 +16,7 @@ const Tanding = () => {
   const [heroUser2, setHeroUser2] = useState<HeroData | null>(null);
   const [heroUser3, setHeroUser3] = useState<HeroData | null>(null);
   const [heroUser4, setHeroUser4] = useState<HeroData | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [opening, setOpening] = useState(true);
 
   useEffect(() => {
@@ -28,7 +28,6 @@ const Tanding = () => {
       randomNumber(1, 731),
     ];
     async function fetchAll() {
-      setLoading(true);
       const [lawan, user1, user2, user3, user4] = await Promise.all([
         fetchHero(idLawan),
         fetchHero(idUser[0]),
@@ -54,6 +53,7 @@ const Tanding = () => {
   };
 
   const handleResetHero = () => {
+    setLoading(true);
     setHeroLawan(null);
     setHeloUser1(null);
     setHeroUser2(null);
@@ -73,6 +73,7 @@ const Tanding = () => {
     setHeroUser2(heroUser2);
     setHeroUser3(heroUser3);
     setHeroUser4(heroUser4);
+    setLoading(false);
   };
 
   // display/hidden logic using tailwind css
