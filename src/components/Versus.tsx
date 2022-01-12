@@ -6,23 +6,43 @@ import HeroUser from "./HeroUser";
 import HeroLawan from "./HeroLawan";
 
 import swords from "../assets/swords.png";
-import { getHeroLawan, getHeroUser } from "../services/getHero";
+import { fetchHero } from "../utils/fetchHero";
 import { randomNumber } from "../utils/generateRandom";
 import {
   calculatePowerLevel,
   bandingUserLawan,
 } from "../utils/calculatePowerLevel";
+import { HeroData } from "../types/HeroData";
 
 Modal.setAppElement("#root");
-const Versus = (props) => {
-  const className = [props.className];
-  const { heroLawan, heroUser, handleResetHero, handleHeroRematch, loading } =
-    props;
 
+type VersusProps = {
+  className: string;
+  heroLawan: HeroData | null;
+  heroUser: (HeroData | null)[];
+  handleResetHero: () => void;
+  handleHeroRematch: <T extends HeroData>(
+    arg1: T,
+    arg2: T,
+    arg3: T,
+    arg4: T,
+    arg5: T
+  ) => void;
+  loading: boolean;
+};
+
+const Versus = ({
+  className,
+  heroLawan,
+  heroUser,
+  handleResetHero,
+  handleHeroRematch,
+  loading,
+}: VersusProps) => {
   const [heroUser1, heroUser2, heroUser3, heroUser4] = heroUser;
 
   const [showTable, setShowTable] = useState(true);
-  const [selectedHero, setSelectedHero] = useState(null);
+  const [selectedHero, setSelectedHero] = useState<HeroData | null>(null);
   const [showHeroLawan, setShowHeroLawan] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -31,7 +51,7 @@ const Versus = (props) => {
 
   const hasilTanding = bandingUserLawan(powerLevelUser, powerLevelLawan);
 
-  const handleSelectHeroUser = (hero) => {
+  const handleSelectHeroUser = (hero: HeroData) => {
     setShowTable(!showTable);
     setShowHeroLawan(!showHeroLawan);
     setSelectedHero(hero);
@@ -52,21 +72,21 @@ const Versus = (props) => {
     setSelectedHero(null);
 
     handleResetHero();
-    const idLawan = randomNumber(1, 563);
+    const idLawan = randomNumber(1, 730);
     const idUser = [
-      randomNumber(1, 563),
-      randomNumber(1, 563),
-      randomNumber(1, 563),
-      randomNumber(1, 563),
+      randomNumber(1, 730),
+      randomNumber(1, 730),
+      randomNumber(1, 730),
+      randomNumber(1, 730),
     ];
 
     const [heroLawan, heroUser1, heroUser2, heroUser3, heroUser4] =
       await Promise.all([
-        getHeroLawan(idLawan),
-        getHeroUser(idUser[0]),
-        getHeroUser(idUser[1]),
-        getHeroUser(idUser[2]),
-        getHeroUser(idUser[3]),
+        fetchHero(idLawan),
+        fetchHero(idUser[0]),
+        fetchHero(idUser[1]),
+        fetchHero(idUser[2]),
+        fetchHero(idUser[3]),
       ]);
     handleHeroRematch(heroLawan, heroUser1, heroUser2, heroUser3, heroUser4);
   };

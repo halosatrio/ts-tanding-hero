@@ -1,17 +1,9 @@
 import { useState } from "react";
+import { HeroData } from "../types/HeroData";
 
 type HeroUserProps = {
-  selectedHero: {
-    name: string;
-    image: string;
-    intelligence: number;
-    strength: number;
-    speed: number;
-    durability: number;
-    power: number;
-    combat: number;
-  };
-  showHeroUser: boolean;
+  selectedHero: null | HeroData;
+  showHeroUser: string;
   powerLevelUser: number;
 };
 

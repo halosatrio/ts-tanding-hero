@@ -9,24 +9,20 @@ type OpeningProps = {
 
 const Opening = ({ className, handleStart }: OpeningProps) => {
   return (
-    <div className={`opening ${className}`}>
+    <div className={`font-sans ${className}`}>
       <div className="row justify-content-around my-4 align-items-center">
         <div className="col-5 col-lg-4 opening-kiri">
-          <img src={ironman} alt="batman" />
+          <img className="w-full" src={ironman} alt="batman" />
         </div>
         <div className="col-2">
-          <img src={swords} alt="batman" />
+          <img className="w-full" src={swords} alt="batman" />
         </div>
         <div className="col-5 col-lg-4">
-          <img src={batman} alt="batman" />
+          <img className="w-full" src={batman} alt="batman" />
         </div>
       </div>
-      <div className="text-center my-3">
-        <button
-          className="btn btn-danger btn-lg"
-          style={{ paddingLeft: 50, paddingRight: 50 }}
-          onClick={handleStart}
-        >
+      <div className="text-center my-4">
+        <button className="btn btn-danger btn-lg px-12`" onClick={handleStart}>
           S T A R T
         </button>
       </div>

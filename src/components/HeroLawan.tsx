@@ -1,18 +1,10 @@
 import { useState } from "react";
+import { HeroData } from "../types/HeroData";
 
 import man from "../assets/man.png";
 
 type HeroLawanProps = {
-  heroLawan: {
-    name: string;
-    image: string;
-    intelligence: number;
-    strength: number;
-    speed: number;
-    durability: number;
-    power: number;
-    combat: number;
-  };
+  heroLawan: null | HeroData;
   showHeroLawan: boolean;
   powerLevelLawan: number;
 };
@@ -31,7 +23,7 @@ const HeroLawan = ({
   return (
     <div className="hero-lawan text-center">
       <h5 className="text-center mb-2">Opponent Character</h5>
-      {showHeroLawan ? (
+      {heroLawan && showHeroLawan ? (
         <figure>
           <img src={heroLawan.image} alt={heroLawan.name} />
           <h4>{heroLawan.name}</h4>

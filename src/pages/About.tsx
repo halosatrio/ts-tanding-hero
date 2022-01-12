@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="container about-page">
       <TitleText />
-      <h2 className="my-3">About this app</h2>
+      <h2 className="my-4">About this app</h2>
       <section className="about-purpose">
         <p>
           This app is my attempt to stay productive during quarantine. This fun

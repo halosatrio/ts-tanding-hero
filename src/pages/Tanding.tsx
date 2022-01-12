@@ -7,22 +7,12 @@ import TitleText from "../components/TitleText";
 import Versus from "../components/Versus";
 
 import { randomNumber } from "../utils/generateRandom";
-import { fetchHero } from "../utils/getHero";
-
-type HeroData = {
-  name: string;
-  image: string;
-  intelligence: number;
-  strength: number;
-  speed: number;
-  durability: number;
-  power: number;
-  combat: number;
-};
+import { fetchHero } from "../utils/fetchHero";
+import { HeroData } from "../types/HeroData";
 
 const Tanding = () => {
   const [heroLawan, setHeroLawan] = useState<HeroData | null>(null);
-  const [heloUser1, setHeloUser1] = useState<HeroData | null>(null);
+  const [heroUser1, setHeloUser1] = useState<HeroData | null>(null);
   const [heroUser2, setHeroUser2] = useState<HeroData | null>(null);
   const [heroUser3, setHeroUser3] = useState<HeroData | null>(null);
   const [heroUser4, setHeroUser4] = useState<HeroData | null>(null);
@@ -58,20 +48,49 @@ const Tanding = () => {
     setLoading(false);
   }, []);
 
+  // Handlers
   const handleStart = () => {
     setOpening(!opening);
   };
 
+  const handleResetHero = () => {
+    setHeroLawan(null);
+    setHeloUser1(null);
+    setHeroUser2(null);
+    setHeroUser3(null);
+    setHeroUser4(null);
+  };
+
+  const handleHeroRematch = <T extends HeroData>(
+    heroLawan: T,
+    heroUser1: T,
+    heroUser2: T,
+    heroUser3: T,
+    heroUser4: T
+  ) => {
+    setHeroLawan(heroLawan);
+    setHeloUser1(heroUser1);
+    setHeroUser2(heroUser2);
+    setHeroUser3(heroUser3);
+    setHeroUser4(heroUser4);
+  };
+
+  // display/hidden logic using tailwind css
+  const showOpening = opening ? "block" : "hidden";
+  const showVersus = opening ? "hidden" : "block";
+
+  const heroUser = [heroUser1, heroUser2, heroUser3, heroUser4];
+
   return (
     <div className="container tanding">
       <TitleText />
-      <Opening className={showOpening} handleStart={this.handleStart} />
+      <Opening className={showOpening} handleStart={handleStart} />
       <Versus
         className={showVersus}
         heroLawan={heroLawan}
         heroUser={heroUser}
-        handleResetHero={this.handleResetHero}
-        handleHeroRematch={this.handleHeroRematch}
+        handleResetHero={handleResetHero}
+        handleHeroRematch={handleHeroRematch}
         loading={loading}
       />
       <Footer isTanding />

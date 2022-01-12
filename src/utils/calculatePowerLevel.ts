@@ -7,7 +7,10 @@ type Hero = {
   combat: number;
 };
 
-export function calculatePowerLevel(hero: Hero): number {
+export function calculatePowerLevel(hero: Hero | null): number {
+  if (hero === null) {
+    return 0;
+  }
   const intelligence = hero.intelligence * 50 ?? 0;
   const strength = hero.strength * 30 ?? 0;
   const speed = hero.speed * 30 ?? 0;
