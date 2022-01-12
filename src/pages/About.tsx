@@ -21,7 +21,7 @@ const About = () => {
         </p>
         <a
           className="py-2 px-4 bg-gray-500 text-white leading-6 inline-block text-center align-middle rounded-md hover:bg-gray-600"
-          href="https://github.com/halosatrio/tanding-hero"
+          href="https://github.com/halosatrio/ts-tanding-hero"
         >
           <img src={github} alt="github icon" width={20} className="inline" />
           <span className="ml-2">Visit Repo</span>

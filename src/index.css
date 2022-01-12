@@ -4,48 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Raleway&display=swap");
 
-.about-page {
-  font-family: "Raleway";
-}
-.about-page h2 {
-  margin-top: 50px;
-  text-align: center;
-}
-
-.about-page.about-purpose {
-  text-align: center;
-  padding: 0 30px;
-  margin-bottom: 20px;
-}
-
-.about-page.how-it-works {
-  text-align: left;
-  padding: 0 20px;
-}
-.about-page.how-it-works blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-}
-.about-page.how-it-works blockquote:before {
-  color: #ccc;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-.about-page.how-it-works blockquote p {
-  display: inline;
-}
-
-.opening {
-  font-family: sans-serif;
-}
-.opening img {
-  width: 100%;
-}
-
 /* REACT-MODAL */
 .ReactModal__Content {
   padding: 40px 80px;
