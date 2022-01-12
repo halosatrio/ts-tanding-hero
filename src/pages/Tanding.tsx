@@ -61,7 +61,7 @@ const Tanding = () => {
     setHeroUser4(null);
   };
 
-  const handleHeroRematch = <T extends HeroData>(
+  const handleHeroRematch = <T extends HeroData | null>(
     heroLawan: T,
     heroUser1: T,
     heroUser2: T,

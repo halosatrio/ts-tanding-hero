@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from "react-modal";
 
 import TabelHeroUser from "./TabelHeroUser";
@@ -21,7 +21,7 @@ type VersusProps = {
   heroLawan: HeroData | null;
   heroUser: (HeroData | null)[];
   handleResetHero: () => void;
-  handleHeroRematch: <T extends HeroData>(
+  handleHeroRematch: <T extends HeroData | null>(
     arg1: T,
     arg2: T,
     arg3: T,
