@@ -9,26 +9,34 @@ type OpeningProps = {
 
 const Opening = ({ className, handleStart }: OpeningProps) => {
   return (
-    <div className={`font-sans ${className}`}>
-      <div className="row justify-content-around my-4 align-items-center">
-        <div className="col-5 col-lg-4 opening-kiri">
+    <div className={`my-6 font-sans ${className}`}>
+      <div className="flex flex-row px-6 lg:my-8 items-center justify-around">
+        <div className="basis-5/12 lg:basis-4/12 px-4">
           <img className="w-full" src={ironman} alt="batman" />
         </div>
-        <div className="col-2">
+        <div className="basis-2/12 px-4">
           <img className="w-full" src={swords} alt="batman" />
         </div>
-        <div className="col-5 col-lg-4">
+        <div className="basis-5/12 lg:basis-4/12 px-4">
           <img className="w-full" src={batman} alt="batman" />
         </div>
       </div>
       <div className="text-center my-4">
-        <button className="btn btn-danger btn-lg px-12`" onClick={handleStart}>
+        <button
+          className="py-2 px-12 bg-red-600 text-white border border-red-500 leading-8 inline-block text-xl text-center align-middle rounded-md hover:bg-red-700 duration-100"
+          onClick={handleStart}
+        >
           S T A R T
         </button>
       </div>
-      <h3 className="text-center">
+      <h3 className="text-center text-3xl mb-2">
         Superhero Match using{" "}
-        <a href="https://www.superheroapi.com/">Superhero-API</a>
+        <a
+          className="text-blue-500 hover:text-blue-700 hover:underline"
+          href="https://www.superheroapi.com/"
+        >
+          Superhero-API
+        </a>
       </h3>
       <h6 className="text-center">
         Both your character and the opponent character are generated randomly

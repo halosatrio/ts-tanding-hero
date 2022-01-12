@@ -14,7 +14,7 @@ const Footer = ({ isTanding }: FooterProps) => {
       {isTanding ? (
         <Link
           to="/about"
-          className="btn btn-outline-secondary mt-3 px-4 py-2 font-weight-bolder"
+          className="py-3 px-6 mt-4 inline-block font-bold bg-transparent text-gray-600 leading-6 text-center align-middle border border-gray-500 rounded-md hover:bg-gray-500 hover:text-gray-100 duration-100"
         >
           Let's see how this app works
         </Link>

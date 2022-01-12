@@ -82,7 +82,7 @@ const Tanding = () => {
   const heroUser = [heroUser1, heroUser2, heroUser3, heroUser4];
 
   return (
-    <div className="container tanding">
+    <div className="container mx-auto tanding max-w-6xl">
       <TitleText />
       <Opening className={showOpening} handleStart={handleStart} />
       <Versus
