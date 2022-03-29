@@ -14,7 +14,7 @@ import {
 } from "../utils/calculatePowerLevel";
 import { HeroData } from "../types/HeroData";
 
-Modal.setAppElement("#root");
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 type VersusProps = {
   className: string;
@@ -93,6 +93,8 @@ const Versus = ({
 
   const showTableHeroUser = showTable ? "block" : "hidden";
   const showHeroUser = showTable ? "hidden" : "block";
+
+  let appRoot = document.querySelector('#app')
 
   return (
     <div className={`versus ${className}`}>

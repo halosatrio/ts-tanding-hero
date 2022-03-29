@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { LoveIcon } from "../assets/icons";
 import love from "../assets/love.svg";
 
-type FooterProps = {
+export type FooterProps = {
   isTanding: boolean;
 };
 

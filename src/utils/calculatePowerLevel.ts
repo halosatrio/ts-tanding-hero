@@ -28,11 +28,9 @@ export function calculatePowerLevel(hero: Hero | null): number {
 export function bandingUserLawan(heroUser: number, heroLawan: number) {
   if (heroUser > heroLawan) {
     return "You Win!";
-  }
-  if (heroUser < heroLawan) {
+  } else if (heroUser < heroLawan) {
     return "You Lose!";
-  }
-  if (heroUser === heroLawan) {
+  } else if (heroUser === heroLawan) {
     return "Draw!";
   } else {
     return "hehehe :)";
