@@ -8,7 +8,7 @@ type TabelHeroUserProps = {
   heroUser3: HeroData | null;
   heroUser4: HeroData | null;
   handleClick: (arg: HeroData) => void;
-  showTableHeroUser: string;
+  showTableHeroUser: boolean;
   loading: boolean;
 };
 const TabelHeroUser = ({
@@ -21,7 +21,7 @@ const TabelHeroUser = ({
   loading,
 }: TabelHeroUserProps) => {
   return (
-    <div className={`tabel-hero ${showTableHeroUser}`}>
+    <div className={`tabel-hero ${showTableHeroUser ? "block": "hidden"}`}>
       <h5 className="text-center mb-2">Select Your Character</h5>
       {loading ? (
         <figure className="loading-hero bg-gray-500 max-w-full rounded-2xl">

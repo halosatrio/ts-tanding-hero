@@ -12,17 +12,20 @@ power: 90,
 combat: 90,
 }
 
-describe("Footer", () => {
+describe("Hero User component", () => {
+  // I want to use toBeVisible & not.toBeVisible
+  // but tailwindcss cannot render the style while on test
+
   it("should show hero Image", () => {
-    render(<HeroUser showHeroUser="block" selectedHero={mockeSelectedHero} powerLevelUser={900} />);
-    let heroUserElement = screen.getByTestId("hero-user")
-    expect(heroUserElement).toBeVisible()
+    const {container} = render(<HeroUser showHeroUser={true} selectedHero={mockeSelectedHero} powerLevelUser={900} />);
+    expect(container.firstChild).toHaveClass('block')
+    // let heroUserElement = screen.getByTestId("hero-user")
+    // expect(heroUserElement).toBeVisible()
   });
 
   it("should show placeholder image when hero not shown", () => {
-    render(<HeroUser showHeroUser="hidden" selectedHero={mockeSelectedHero} powerLevelUser={900} />);
-    let heroUserElement = screen.getByTestId("hero-user")
-    // expect(heroUserElement).not.toBeVisible()
-    screen.debug();
+    const {container} = render(<HeroUser showHeroUser={false} selectedHero={mockeSelectedHero} powerLevelUser={900} />);
+    expect(container.firstChild).toHaveClass('hidden')
+    // console.log(screen.debug())
   });
 });

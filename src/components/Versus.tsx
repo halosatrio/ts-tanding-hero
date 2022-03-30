@@ -91,11 +91,6 @@ const Versus = ({
     handleHeroRematch(heroLawan, heroUser1, heroUser2, heroUser3, heroUser4);
   };
 
-  const showTableHeroUser = showTable ? "block" : "hidden";
-  const showHeroUser = showTable ? "hidden" : "block";
-
-  let appRoot = document.querySelector('#app')
-
   return (
     <div className={`versus ${className}`}>
       <Modal
@@ -120,11 +115,11 @@ const Versus = ({
             heroUser3={heroUser3}
             heroUser4={heroUser4}
             handleClick={handleSelectHeroUser}
-            showTableHeroUser={showTableHeroUser}
+            showTableHeroUser={!showTable}
             loading={loading}
           />
           <HeroUser
-            showHeroUser={showHeroUser}
+            showHeroUser={showTable}
             selectedHero={selectedHero}
             powerLevelUser={powerLevelUser}
           />

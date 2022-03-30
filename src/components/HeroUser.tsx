@@ -3,7 +3,7 @@ import { HeroData } from "../types/HeroData";
 
 type HeroUserProps = {
   selectedHero: null | HeroData;
-  showHeroUser: "hidden" | "block";
+  showHeroUser: boolean;
   powerLevelUser: number;
 };
 
@@ -19,7 +19,7 @@ const HeroUser = ({
   };
 
   return (
-    <div data-testid="hero-user" className={`hero-user text-center ${showHeroUser}`}>
+    <div data-testid="hero-user" className={`hero-user text-center ${showHeroUser ? 'block' : 'hidden'}`}>
       <h5 className="text-center mb-2">Your Character</h5>
       {selectedHero ? (
         <figure>
